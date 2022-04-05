@@ -14,8 +14,9 @@ DELIMITER $$
 CREATE PROCEDURE proc_oi()
  begin
  	select "Oi, eu fui modificado!" as mensagem;
-end
-$$
+end $$
 DELIMITER ;
 
 CALL proc_oi();
+
+
