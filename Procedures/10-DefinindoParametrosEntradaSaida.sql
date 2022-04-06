@@ -8,6 +8,9 @@ create procedure proc_exemplo_parametros(in param1 int,  /*Escopo de parametros*
 									     inout param3 float(3,1)) /*Escopo de parametros*/
 begin
 	select param1, param2, param3;
+    
+    set param2 = "Parametro 2 foi modificado";
+    set param3 = 30.3;
     /*
     param1 - será exibido pois é um parametro de entrada.
     param2 - sera exibido null, pois o valor não é passado,
@@ -24,3 +27,5 @@ set @p2 = "Parametro 2";
 set @p3 = 70.5;
 
 call proc_exemplo_parametros(@p1,@p2,@p3);
+
+select @p1, @p2, round(@p3,2);
